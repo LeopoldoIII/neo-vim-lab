@@ -13,3 +13,4 @@
    - Rely on `_G.IS_WINDOWS` and `_G.IS_MAC` global flags set in `init.lua`.
 5. **Headless Verification**:
    - Always test configuration changes using `nvim --headless "+qa"` to verify that syntax errors do not break startup.
+

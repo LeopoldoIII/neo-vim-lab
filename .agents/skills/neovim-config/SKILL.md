@@ -37,3 +37,4 @@ Use this skill when extending or modifying this Neovim setup.
 1. Open `lua/keymaps.lua`.
 2. Use `map("n", "<leader>...", "<cmd>...<CR>", { desc = "Meaningful description" })`.
 3. Ensure no keymap conflicts with existing IDE navigation bindings.
+

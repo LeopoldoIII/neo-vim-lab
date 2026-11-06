@@ -14,3 +14,4 @@ This repository is a modular, high-performance, cross-platform Neovim configurat
    - Use `_G.IS_WINDOWS` and `_G.IS_MAC`.
 4. **Validation**:
    - Run `nvim --headless "+qa"` after modifying configuration files to confirm that there are no syntax or startup errors.
+

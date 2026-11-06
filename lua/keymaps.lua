@@ -79,3 +79,4 @@ map("n", "<leader>fr", "<cmd>Telescope oldfiles<CR>", { desc = "Recent files" })
 map("n", "<leader>tt", "<cmd>ToggleTerm direction=float<CR>", { desc = "Toggle floating terminal" })
 map("n", "<leader>th", "<cmd>ToggleTerm size=15 direction=horizontal<CR>", { desc = "Toggle horizontal terminal" })
 map("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
+

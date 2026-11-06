@@ -10,3 +10,4 @@
   - `fix(scope): ...` for bug fixes or path corrections.
   - `docs(scope): ...` for documentation updates.
   - `refactor(scope): ...` for refactoring Lua configurations.
+

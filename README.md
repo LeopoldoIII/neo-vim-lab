@@ -25,13 +25,22 @@ Ensure you have a modern terminal (e.g. iTerm2 / Ghostty on macOS, Windows Termi
 ### macOS (Homebrew)
 ```bash
 brew install neovim ripgrep fd git node
+
+# Reload shell environment & variables (if needed)
+source ~/.zshrc
 ```
+> **Apple Silicon tip**: If brew was just installed, ensure it is in your path: `eval "$(/opt/homebrew/bin/brew shellenv)"`.
 
 ### Windows 11 (Winget - Run in PowerShell)
 ```powershell
 winget install Neovim.Neovim BurntSushi.ripgrep.MSVC sharkdp.fd Git.Git OpenJS.NodeJS zig.zig
+
+# Reload PATH variables in your active PowerShell session without restarting terminal:
+$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
 ```
-> **Note for Windows**: `zig` provides a lightweight, zero-configuration C compiler for Treesitter grammar builds.
+> **Note for Windows**:
+> - `zig` provides a lightweight, zero-configuration C compiler for Treesitter grammar builds.
+> - You can also simply close and reopen Windows Terminal (or type `pwsh`) to reload environment variables.
 
 ---
 
@@ -143,4 +152,21 @@ Because this repository includes dedicated agent definitions (`AGENTS.md`) and s
 3. `agy` modifies the files in-place and runs syntax checks.
 4. When you open or reload Neovim, the changes take effect instantly.
 5. Push to your Git repository to sync both macOS and Windows effortlessly.
+
+---
+
+## 🔄 Applying Updates & Reloading
+
+### In the Terminal (Environment Variables)
+- **macOS (Zsh)**: Run `source ~/.zshrc` or restart the terminal window.
+- **Windows 11 (PowerShell)**:
+  - Run `$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")` to refresh PATH without closing your session.
+  - Or simply relaunch your shell: type `pwsh` (or reopen Windows Terminal).
+
+### In Neovim (Config Changes)
+- **Reload core options / keymaps**: `:source $MYVIMRC`
+- **Sync plugins (Lazy.nvim)**: `:Lazy sync`
+- **Update / Check LSP & Tooling (Mason)**: `:Mason`
+- **Full Refresh**: Simply close and reopen `nvim` (recommended when modifying LSP servers or package specs).
+
 
