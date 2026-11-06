@@ -45,7 +45,7 @@ To avoid symlinks and allow direct edits, clone this repository directly into th
 mv ~/.config/nvim ~/.config/nvim.backup 2>/dev/null
 
 # Clone into standard configuration path
-git clone https://github.com/<your-username>/neo-vim-lab.git ~/.config/nvim
+git clone https://github.com/LeopoldoIII/neo-vim-lab.git ~/.config/nvim
 
 # Launch Neovim (lazy.nvim will install plugins automatically)
 nvim
@@ -57,7 +57,7 @@ nvim
 Rename-Item -Path "$env:LOCALAPPDATA\nvim" -NewName "$env:LOCALAPPDATA\nvim.backup" -ErrorAction SilentlyContinue
 
 # Clone into standard configuration path
-git clone https://github.com/<your-username>/neo-vim-lab.git "$env:LOCALAPPDATA\nvim"
+git clone https://github.com/LeopoldoIII/neo-vim-lab.git "$env:LOCALAPPDATA\nvim"
 
 # Launch Neovim
 nvim
@@ -143,3 +143,4 @@ Because this repository includes dedicated agent definitions (`AGENTS.md`) and s
 3. `agy` modifies the files in-place and runs syntax checks.
 4. When you open or reload Neovim, the changes take effect instantly.
 5. Push to your Git repository to sync both macOS and Windows effortlessly.
+
