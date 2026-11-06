@@ -50,25 +50,32 @@ To avoid symlinks and allow direct edits, clone this repository directly into th
 
 ### On macOS / Linux
 ```bash
-# Backup existing config if needed
+# 1. Backup existing config if needed
 mv ~/.config/nvim ~/.config/nvim.backup 2>/dev/null
 
-# Clone into standard configuration path
+# 2. Clone into standard configuration path
 git clone https://github.com/LeopoldoIII/neo-vim-lab.git ~/.config/nvim
 
-# Launch Neovim (lazy.nvim will install plugins automatically)
+# 3. Reload shell environment & variables
+source ~/.zshrc 2>/dev/null || true
+type brew &>/dev/null && eval "$($(which brew) shellenv)"
+
+# 4. Launch Neovim (lazy.nvim will install plugins automatically)
 nvim
 ```
 
 ### On Windows 11 (PowerShell)
 ```powershell
-# Backup existing config if needed
+# 1. Backup existing config if needed
 Rename-Item -Path "$env:LOCALAPPDATA\nvim" -NewName "$env:LOCALAPPDATA\nvim.backup" -ErrorAction SilentlyContinue
 
-# Clone into standard configuration path
+# 2. Clone into standard configuration path
 git clone https://github.com/LeopoldoIII/neo-vim-lab.git "$env:LOCALAPPDATA\nvim"
 
-# Launch Neovim
+# 3. Reload environment variables in current session
+$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
+
+# 4. Launch Neovim
 nvim
 ```
 
