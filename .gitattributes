@@ -1,0 +1,7 @@
+# Ensure LF line endings on all operating systems
+* text=auto eol=lf
+
+# Lua and config files
+*.lua text eol=lf
+*.md text eol=lf
+*.json text eol=lf

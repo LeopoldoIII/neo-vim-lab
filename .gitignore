@@ -1,0 +1,19 @@
+# Neovim swap, backup, and undo files
+*.swp
+*.swo
+*.swn
+*~
+*.bak
+
+# Persistent state & shada
+.netrwhist
+shada/
+undo/
+
+# Lazy.nvim transient state (lockfile should be committed!)
+# lazy-lock.json is NOT ignored so both platforms stay pinned
+
+# OS metadata
+.DS_Store
+Thumbs.db
+Desktop.ini
