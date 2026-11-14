@@ -20,11 +20,16 @@ A modular, high-performance, cross-platform Neovim IDE configuration written 100
 
 ## 📦 Prerequisites (One-Liner Installers)
 
-Ensure you have a modern terminal (e.g. iTerm2 / Ghostty on macOS, Windows Terminal on Windows) with a [Nerd Font](https://www.nerdfonts.com/) installed (recommended: **JetBrainsMono Nerd Font**).
+Ensure you have a modern terminal with a [Nerd Font](https://www.nerdfonts.com/) installed (recommended: **JetBrainsMono Nerd Font**).
+
+> 💡 **Recommended Terminal**: For an identical terminal experience between macOS and Windows 11, we highly recommend **[WezTerm](https://wezfurlong.org/wezterm/)**. It is GPU-accelerated, configured via Lua (just like Neovim), and handles glyphs/multiplexing identically on both operating systems. See [WezTerm Installation](#-recommended-terminal-wezterm-cross-platform) below.
 
 ### macOS (Homebrew)
 ```bash
 brew install neovim ripgrep fd git node
+
+# Optional: Install WezTerm terminal
+brew install --cask wezterm
 
 # Reload shell environment & variables (if needed)
 source ~/.zshrc
@@ -35,12 +40,31 @@ source ~/.zshrc
 ```powershell
 winget install Neovim.Neovim BurntSushi.ripgrep.MSVC sharkdp.fd Git.Git OpenJS.NodeJS zig.zig
 
+# Optional: Install WezTerm terminal
+winget install wez.wezterm
+
 # Reload PATH variables in your active PowerShell session without restarting terminal:
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
 ```
 > **Note for Windows**:
 > - `zig` provides a lightweight, zero-configuration C compiler for Treesitter grammar builds.
-> - You can also simply close and reopen Windows Terminal (or type `pwsh`) to reload environment variables.
+> - You can also simply close and reopen your terminal (or type `pwsh`) to reload environment variables.
+
+---
+
+### 🖥️ Recommended Terminal: WezTerm (Cross-Platform)
+
+If you switch frequently between macOS and Windows 11, using different terminal emulators (e.g. iTerm2 vs Windows Terminal) often leads to inconsistent keybindings and font rendering. **[WezTerm](https://wezfurlong.org/wezterm/)** solves this:
+
+- **100% Consistent**: Identical look, feel, tabs, and keymaps on macOS and Windows 11.
+- **Configured in Lua**: Uses `~/.wezterm.lua` (macOS) or `%USERPROFILE%\.wezterm.lua` (Windows), matching your Neovim Lua stack.
+- **Built-in Font Fallback**: Renders Nerd Font icons and ligatures effortlessly out of the box.
+
+#### Quick Install:
+| Platform | Command |
+| :--- | :--- |
+| **macOS** | `brew install --cask wezterm` |
+| **Windows 11** | `winget install wez.wezterm` |
 
 ---
 
